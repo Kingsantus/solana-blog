@@ -9,8 +9,8 @@ export function NavBar() {
   const pathname = usePathname();
 
   return (
-    <div className="w-full">
-      <nav className="bg-white dark:bg-gray-900 shadow-md p-4 flex items-center justify-between">
+    <div className="max-w-[90%] mx-auto">
+      <nav className="bg-white p-4 flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-3">
           <span className="text-xl font-semibold dark:text-white">Solana-Blog-App</span>
         </Link>
@@ -40,7 +40,7 @@ function NavLink({ href, children, active }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className={`text-gray-900 dark:text-white px-3 py-2 rounded-md text-sm font-medium ${active ? 'bg-gray-200 dark:bg-gray-700' : ''}`}
+      className={`text-gray-900 dark:text-white px-3 py-2 rounded-md text-xl font-medium ${active ? 'bg-gray-200 dark:bg-gray-700' : ''}`}
     >
       {children}
     </Link>

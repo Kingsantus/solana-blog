@@ -1,39 +1,41 @@
-import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
 import Link from "next/link";
 
-export const Footers = () => (
-  <div className="w-full py-20" id="footers">
-    <div className="container mx-auto">
-      <div className="flex flex-col gap-10">
-        <div className="flex gap-4 flex-col items-start">
-          <div className="flex gap-2 flex-col">
-            <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl font-regular text-left">
-              Footers
-            </h2>
-            <p className="text-lg max-w-xl lg:max-w-lg leading-relaxed tracking-tight text-muted-foreground  text-left">
-              Footer to add at the bottom of your website.
-            </p>
-          </div>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <Link href="blocks/footers/footer1" className="hover:opacity-70">
-            <div className="flex flex-col gap-2">
-              <div className="bg-muted rounded-md p-8 lg:p-20">
-                <Image
-                  src="/footer1.png"
-                  alt="footer1"
-                  width={3600}
-                  height={1972}
-                  layout="responsive"
-                  className="rounded-md"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+
+export default function Footers() {
+  return (
+    <footer className="bg-white max-w-[90%] mx-auto m-4">
+      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="sm:flex sm:items-center sm:justify-between">
+          <Link
+            href="/"
+            className="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse"
+          >
+            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              Solana Blog App
+            </span>
           </Link>
+          <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400">
+            <li>
+              <a href="/about" className="hover:underline me-4 md:me-6">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:underline">
+                Contact
+              </a>
+            </li>
+          </ul>
         </div>
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          © 2025{" "}
+          <a href="https://x.com/0xpsolitesol/" rel="noopener noreferrer"  target="_blank" className="hover:underline">
+            Psolite™
+          </a>
+          . All Rights Reserved.
+        </span>
       </div>
-    </div>
-  </div>
-);
+    </footer>
+  );
+};

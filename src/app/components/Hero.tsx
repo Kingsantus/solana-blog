@@ -3,14 +3,12 @@
 import { useEffect, useMemo, useState } from "react";
 
 import { motion } from "framer-motion";
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
-import { MoveRight, PhoneCall } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
-export const Hero5 = () => {
+export const Hero = () => {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
-    () => ["amazing", "new", "wonderful", "beautiful", "smart"],
+    () => ["seamless", "innovative", "dynamic", "engaging", "efficient", "futuristic"],
     []
   );
 
@@ -28,16 +26,21 @@ export const Hero5 = () => {
   return (
     <div className="w-full">
       <div className="container mx-auto">
-        <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
-          <div>
-            <Button variant="secondary" size="sm" className="gap-4">
-              Read our launch article <MoveRight className="w-4 h-4" />
-            </Button>
+        <div className="flex gap-8 py-10 lg:py-20 items-center justify-center flex-col">
+          <div className="flex">
+           <a 
+              href="https://www.x.com/superteamng" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="gap-4 px-4 py-2 bg-blue-500 text-white text-xl border rounded-sm flex items-center justify-center hover:bg-gray-700"
+            >
+              Follow Superteam
+            </a>
           </div>
           <div className="flex gap-4 flex-col">
             <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
-              <span className="text-spektr-cyan-50">This is something</span>
-              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
+              <span className="text-spektr-cyan-50">Solana Blog App</span>
+              <span className="relative flex w-full justify-center text-muted-foreground overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
                   <motion.span
@@ -63,20 +66,20 @@ export const Hero5 = () => {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
-              Managing a small business today is already tough. Avoid further
-              complications by ditching outdated, tedious trade methods. Our
-              goal is to streamline SMB trade, making it easier and faster than
-              ever.
+            <p className="text-lg md:text-xl leading-relaxed tracking-tight max-w-2xl text-center">
+              Explore the <strong>Psolite Solana Workshop</strong>-a four-day deep dive into all facetsof Solana. From Connecting wallet to creating account, sending sol and SPL token, creeating and minting tokens, and running blog site on solana ecosystems, unlock the full potential of decentralized tech. 
             </p>
           </div>
           <div className="flex flex-row gap-3">
-            <Button size="lg" className="gap-4" variant="outline">
-              Jump on a call <PhoneCall className="w-4 h-4" />
-            </Button>
-            <Button size="lg" className="gap-4">
-              Sign up here <MoveRight className="w-4 h-4" />
-            </Button>
+            <a 
+              href="https://www.youtube.com/@digital_psolite" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="gap-4 px-4 py-2 bg-blue-500 text-white text-xl border rounded-sm flex items-center justify-center hover:bg-gray-700"
+            >
+              Watch Tutorial
+            </a>
+              <WalletMultiButton />
           </div>
         </div>
       </div>
